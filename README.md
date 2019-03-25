@@ -14,6 +14,10 @@
 ## 五，添加首页的九宫格标签
 ## 六，切换路由添加动画
 ## 七，上传单机服务器测试所需数据：Local_server文件夹中的内容
+## 八，添加新闻资讯路由：
+> 1，添加新闻资讯组件、路由点击、路由配置。
+> 2，编辑新闻组件：使用Mui的media-list.html中的图文列表。
+> 3，为新闻组件添加列表数据和vue-resource获取新闻列表数据：this.$http.get('getNewsList.php')
 
 
 ##  [百度链接](https://www.baidu.com/)

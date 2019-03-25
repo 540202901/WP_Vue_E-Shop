@@ -43,24 +43,36 @@
 </script>
 
 <style lang="scss" scoped>
+
+    /*设置App页面上下边距、横轴超出隐藏、路由切换动画*/
     .app-container{
         margin-top:40px;
         margin-bottom:50px;
         overflow-x: hidden;
+
+
+        /*路由动画：开始位置*/
+        .v-enter{
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        /*路由动画：结束位置*/
+        .v-leave-to {
+            opacity: 0;
+            transform: translateX(-100%);
+            position:absolute;
+        }
+        /*路由动画：动画运行进入和离开过程*/
+        .v-enter-active,
+        .v-leave-active{
+            transition:all 0.5s;
+        }
+
+
+
     }
 
-    .v-enter{
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    .v-leave-to {
-        opacity: 0;
-        transform: translateX(-100%);
-        position:absolute;
-    }
-    .v-enter-active,
-    .v-leave-active{
-        transition:all 0.5s;
-    }
+
+
 
 </style>

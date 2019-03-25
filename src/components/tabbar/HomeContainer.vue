@@ -7,9 +7,9 @@
             </mt-swipe-item>
         </mt-swipe>
         <ul class="mui-table-view mui-grid-view mui-grid-9">
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><router-link to="/home/newslist">
                 <img src="../../images/menu1.png">
-                <div class="mui-media-body">新闻资讯</div></a></li>
+                <div class="mui-media-body">新闻资讯</div></router-link></li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
                 <img src="../../images/menu2.png">
                 <div class="mui-media-body">图片分享</div></a></li>
@@ -67,17 +67,24 @@
 </script>
 
 <style lang="scss" scoped>
-    .mint-swipe{
-        height: 200px;
-    }
 
-    .mint-swipe-item{
-        img{
-            width: 100%;
-            height: 100%;
+       /*轮播图样式*/
+        .mint-swipe{
+            /*轮播图高度*/
+            height: 200px;
+
+            /*轮播图图片大小*/
+            .mint-swipe-item{
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
-    }
 
+
+
+    /*设置九宫图背景色、标签大小、边框线、字体大小*/
     .mui-table-view.mui-grid-view.mui-grid-9{
         background-color: white;
         border: none;

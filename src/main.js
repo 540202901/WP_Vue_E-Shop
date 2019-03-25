@@ -20,6 +20,14 @@ import VueRouter from 'vue-router';//导入路由包
 Vue.use(VueRouter);//vue使用路由
 //导入 router.js 模块
 import router from './router.js'
+//=============全局过滤器=======================
+import moment from 'moment'
+//时间过滤器:
+Vue.filter('dateFormat',function(dateStr,pattern="YYYY-MM-DD HH:mm:ss"){
+    return moment(dateStr).format(pattern);
+});
+
+
 
 
 //=============Vue根实例=======================
@@ -28,3 +36,8 @@ var vm = new Vue({
     render: c => c(app),
     router //挂在 路由对象 到 VM实例
 });
+
+
+
+
+
