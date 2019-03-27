@@ -1,5 +1,7 @@
 <template>
     <div class="newsinfo-container">
+        <router-link to="/home/newslist" class="back mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></router-link>
+
         <h3 class="title">{{ newsinfo.title }}</h3>
         <p class="subtitle">
             <span>发表时间:{{ newsinfo.add_time | dateFormat  }}</span>

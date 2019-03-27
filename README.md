@@ -27,5 +27,11 @@
 > 4，添加评论组件，并作为子组件挂在到NewsInfo上一份。<br>
 > 5，为评论组件挂在vue-resource获取的数据(测试php静态数据，无数据库)。<br>
 
+#### 九，添加图片分享组件：
+> 1，添加组件和链接<br>
+> 2，用mui的tab-top-webview-main.html模块来做导航滑动头。<br>
+> 3，解决mui问题1:webpack默认打包是严格模式，而mui.js中有非严格模式代码。<br>
+> 4，解决mui问题2:初始化滑动模块的代码需要写到mounted(){}钩子函数中，只有元素挂载完成初始化滑动才有效果。<br>
+> 5，解决mui问题3:mui.js会与类mui-tab-item发生冲突而无法切换路由，赋值mui-tab-item样式，并将样式改名，解决问题。<br>
 
 ####  [百度链接](https://www.baidu.com/)
