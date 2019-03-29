@@ -4,7 +4,6 @@
         <mt-header fixed title="Webpack+Vue商城项目练习"></mt-header>
 
 
-
         <!-- 中间的 路由 router-view 区域-->
         <transition >
           <router-view></router-view>
@@ -43,7 +42,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+    .mint-header{
+        z-index: 100 !important;
+    }
     /*设置App页面上下边距、横轴超出隐藏、路由切换动画*/
     .app-container{
         margin-top:40px;

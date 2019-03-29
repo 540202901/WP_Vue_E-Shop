@@ -6,13 +6,31 @@ import Vue from 'vue';
 import VueResource from 'vue-resource';//安装ajax请求组件
 Vue.use(VueResource);//安装ajax请求组件
 Vue.http.options.root = 'http://localhost:8000/vue/';//ajax设置根目录
+import VuePreview from 'vue-preview';//安装图片预览插件
+// Vue.use(VuePreview);//安装图片预览插件
+Vue.use(VuePreview, {
+    mainClass: 'pswp--minimal--dark',
+    barsSize: {top: 0, bottom: 0},
+    captionEl: true,
+    fullscreenEl: true,
+    shareEl: false,
+    bgOpacity: 0.85,
+    tapToClose: true,
+    tapToToggleControls: false
+});
 //=============按需导入Mint UI组件=======================
-import { Header, Swipe, SwipeItem, Button } from 'mint-ui';
+// import { Header, Swipe, SwipeItem, Button, Lazyload } from 'mint-ui';
+//
+// Vue.component(Header.name, Header);//Header组件
+// Vue.component(Swipe.name, Swipe);//轮播图组件
+// Vue.component(SwipeItem.name, SwipeItem);//轮播图组件
+// Vue.component(Button.name, Button);// 按钮组件
+// Vue.use(Lazyload);//懒加载组件
 
-Vue.component(Header.name, Header);//Header组件
-Vue.component(Swipe.name, Swipe);//轮播图组件
-Vue.component(SwipeItem.name, SwipeItem);//轮播图组件
-Vue.component(Button.name, Button);// 按钮组件
+import MintUI from 'mint-ui';
+Vue.use(MintUI);
+import 'mint-ui/lib/style.min.css';
+
 //================导入MUI扩展=======================
 import './lib/mui/dist/css/mui.min.css';
 import './lib/mui/dist/css/icons-extra.css';
