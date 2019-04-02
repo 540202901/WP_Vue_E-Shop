@@ -1,6 +1,5 @@
 <template>
     <div class="NewsList">
-        <router-link to="/home" class="back mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></router-link>
         <ul class="mui-table-view">
             <li class="mui-table-view-cell mui-media" v-for="item in newslist" :key="item.id">
                 <router-link :to="'/home/newsinfo/'+item.id">

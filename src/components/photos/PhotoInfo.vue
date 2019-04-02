@@ -47,8 +47,8 @@
                 this.$http.get("api/photos/getthumimages.php?id=" + this.id).then(result =>{
                     if (result.body.status === 0){
                         result.body.message.forEach(item=>{
-                            item.w=600;
-                            item.h=400;
+                            item.w=1200;
+                            item.h=800;
                         });
                         this.slide1 = result.body.message;
                     }

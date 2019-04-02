@@ -1,22 +1,6 @@
 html{
   body {
-    /*返回样式*/
-    .back{
-      span{
-        color:whitesmoke;
-        font-size:14px;
-        display: inline-block;
-        position: relative;
-        bottom: 2px;
-      }
 
-      color:whitesmoke !important;
-      display: block !important;
-      position: absolute;
-      top: 8px;
-      left: 10px;
-      z-index: 1000;
-    }
   }
 }
 

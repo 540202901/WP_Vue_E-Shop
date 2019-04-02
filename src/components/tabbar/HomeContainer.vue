@@ -1,11 +1,11 @@
 <template>
 
     <div>
-        <mt-swipe :auto="3000">
-            <mt-swipe-item v-for="item in swipeList" :key="item.url">
-                <img :src="item.img" alt="">
-            </mt-swipe-item>
-        </mt-swipe>
+        <!--轮播图区域-->
+        <swiper :swipeList="swipeList" :is-full="true"></swiper>
+
+
+        <!--选择区域-->
         <ul class="mui-table-view mui-grid-view mui-grid-9">
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><router-link to="/home/newslist">
                 <img src="../../images/menu1.png">
@@ -36,7 +36,7 @@
 <script>
     //引入Toast弹框模块
     import { Toast } from 'mint-ui';
-
+    import swiper from '../subcomponents/swiper.vue';//导入轮播图组件
     export default{
         name: "HomeContainer",
         data(){
@@ -60,6 +60,9 @@
                     }
                 });
             }
+        },
+        components:{
+            swiper
         }
 
 
@@ -68,19 +71,6 @@
 
 <style lang="scss" scoped>
 
-       /*轮播图样式*/
-        .mint-swipe{
-            /*轮播图高度*/
-            height: 200px;
-
-            /*轮播图图片大小*/
-            .mint-swipe-item{
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
 
 
 

@@ -1,6 +1,5 @@
 <template>
     <div>
-        <router-link to="/home" class="is-fixed back mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></router-link>
         <!--滑动代码模块-->
         <div  id="slider" class="mui-slider">
             <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">

@@ -1,7 +1,5 @@
 <template>
     <div class="newsinfo-container">
-        <router-link to="/home/newslist" class="back mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></router-link>
-
         <h3 class="title">{{ newsinfo.title }}</h3>
         <p class="subtitle">
             <span>发表时间:{{ newsinfo.add_time | dateFormat  }}</span>
@@ -32,7 +30,7 @@
             this.getNewsInfo();
         },
         methods:{
-            getNewsInfo(){
+            getNewsInfo(){//获得新闻信息
                 this.$http.get("api/getnew/" + this.id +".php").then(result =>{
                     if (result.body.status === 0){
                         this.newsinfo = result.body.message[0];

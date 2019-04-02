@@ -4,7 +4,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open  --port 3000 --profile --progress --inline --content-base"
+    "dev": "webpack-dev-server --open  --port 3000 --profile --progress --inline --content-base "
   },
   "author": "",
   "license": "ISC",

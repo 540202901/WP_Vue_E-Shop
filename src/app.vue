@@ -1,7 +1,13 @@
 <template>
     <div class="app-container">
         <!-- 顶部 Header 区域-->
-        <mt-header fixed title="Webpack+Vue商城项目练习"></mt-header>
+        <mt-header fixed  title="Webpack+Vue商城项目练习">
+
+        <a slot="left" @click="back" v-show="isNotMain">
+            <mt-button icon="back">返回</mt-button>
+        </a>
+
+        </mt-header>
 
 
         <!-- 中间的 路由 router-view 区域-->
@@ -21,7 +27,7 @@
             </router-link>
             <router-link class="mui-tab-item-llb" to="/shopcar">
                 <span class="mui-icon mui-icon-extra mui-icon-extra-cart">
-                            <span class="mui-badge">0</span>
+                            <span class="mui-badge" id="badge">0</span>
                 </span>
                 <span class="mui-tab-label">购物车</span>
             </router-link>
@@ -38,7 +44,31 @@
 </template>
 
 <script>
-
+ export default{
+     data(){
+         return {
+             isNotMain: false ,
+         }
+     },
+     updated(){
+         this.checkIsNotMain();
+     },
+     created(){//第一次进入页面，在创建元素后检查path是否为home
+         this.checkIsNotMain();
+     },
+     methods:{
+         checkIsNotMain(){//检查返回按钮是否显示 方法1：
+             this.isNotMain = (this.$route.path === "/home" ) ? false : true;
+         },
+         back(){
+             this.$router.go(-1);
+         }
+     },watch:{//检查返回按钮是否显示 方法2：
+        '$route.path':function(newVal){
+            this.isNotMain = (newVal === "/home" ) ? false : true;
+        }
+     }
+ }
 </script>
 
 <style lang="scss" scoped>

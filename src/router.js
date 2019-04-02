@@ -9,6 +9,9 @@ import NewsInfo from './components/news/NewsInfo.vue'
 import PhotoList from './components/photos/PhotoList.vue'
 import PhotoInfo from './components/photos/PhotoInfo.vue'
 import GoodsList from './components/goods/GoodsList.vue'
+import GoodsInfo from './components/goods/GoodsInfo.vue'
+import GoodsDesc from './components/goods/GoodsDesc.vue';
+import GoodsComment from './components/goods/GoodsComment.vue';
 
 //创建路由对象
 var router = new VueRouter({
@@ -23,6 +26,9 @@ var router = new VueRouter({
         { path:'/home/photolist',component:PhotoList},//图片分享列表组件
         { path:'/home/photoinfo/:id',component:PhotoInfo },//图片详情组件
         { path:'/home/goodslist',component:GoodsList },//商品列表
+        { path:'/home/goodsinfo/:id', component:GoodsInfo },//商品详情页面
+        { path:'/home/goodsdesc/:id', component:GoodsDesc, name:"goodsdesc"},//商品图文介绍
+        { path:'/home/goodscomment/:id', component:GoodsComment, name:"goodscomment"},//商品图文介绍
     ],
     linkActiveClass: 'mui-active'
 });

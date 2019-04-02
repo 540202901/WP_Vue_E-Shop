@@ -5,7 +5,7 @@ import './css/main.scss'
 import Vue from 'vue';
 import VueResource from 'vue-resource';//安装ajax请求组件
 Vue.use(VueResource);//安装ajax请求组件
-Vue.http.options.root = 'http://localhost:8000/vue/';//ajax设置根目录
+Vue.http.options.root = 'http://my.com:8000/vue/';//ajax设置根目录
 import VuePreview from 'vue-preview';//安装图片预览插件
 // Vue.use(VuePreview);//安装图片预览插件
 Vue.use(VuePreview, {
