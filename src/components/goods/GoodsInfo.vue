@@ -93,7 +93,7 @@
                         this.swipeList = result.body.message;
                     }
                 })
-            },
+            },//获取轮播图图片
             getGoodsInfo(){
                 //获取商品的详细信息
                 this.$http.get('api/goods/getinfo.php?id=' + this.id).then(result =>{
@@ -101,15 +101,26 @@
                         this.goodsinfo = result.body.message[0];
                     }
                 })
-            },
+            },//获取商品的详细信息
             goDesc(id){//跳转图文介绍组件
                 this.$router.push({ name:'goodsdesc' , params:id });
             },
             goComment(id){//跳转商品评论组件
                 this.$router.push({ name:'goodscomment' , params:id });
-            },
+            },//跳转商品评论组件
             addToShopCar(){//加入购物车
-                this.ballFlag = !this.ballFlag;
+                this.ballFlag = true;//是否显示小球的标识符
+                //car中商品对象:{ id: 商品id,  count:要购买的数量,price:商品单价,selected:是否被选中(true/false)}
+                var goodsinfo = {
+                    id: this.id,
+                    count:this.selectedCount,
+                    price:this.goodsinfo.sell_price,
+                    selected:false
+                };
+                //将商品信息goodsinfo提交到购物车方法addToCar中
+                this.$store.commit('addToCar', goodsinfo);
+
+
             },//加入购物车
             //半场动画钩子函数
             beforeEnter(el){
@@ -131,13 +142,13 @@
                 el.offsetWidth;//不加没有动画，所以一定要加上一句类似的
                 el.style.transform = `translate(${xDist}px,${yDist}px)`;//偏移位置最终位置
                 // el.style.transition = "all 1s ease";//动画配置
-                el.style.transition = "all 1s cubic-bezier(.53,-0.2,1,.69)";//设置为贝塞尔动画
+                el.style.transition = "all 0.5s cubic-bezier(.53,-0.2,1,.69)";//设置为贝塞尔动画
 
                 done();//调用下一步
             },
             afterEnter(el){
                 //进入动画之后，el:元素
-                this.ballFlag = !this.ballFlag;//将标识符取非隐藏小球
+                this.ballFlag = false;//将标识符取非隐藏小球
             },
             //数字子组件向父组件传递加入购物车的值
             getSelectedCount(count){
